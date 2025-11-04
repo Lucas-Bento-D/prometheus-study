@@ -1,0 +1,23 @@
+{
+  "name": "prometheus-study",
+  "version": "1.0.0",
+  "description": "app to study prometheus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas-Bento-D/prometheus-study.git"
+  },
+  "author": "Lucas-Bento-D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas-Bento-D/prometheus-study/issues"
+  },
+  "homepage": "https://github.com/Lucas-Bento-D/prometheus-study#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "prom-client": "^15.1.3"
+  }
+}
