@@ -15,10 +15,17 @@ const gauge = new promClient.Gauge({
     help: "exemplo de gauge"
 })
 
+const histogram = new promClient.Histogram({
+    name: "requests_time_seconds",
+    help: "exemplo de tempo de resposta de api",
+    buckets: [.1, .2, .3, .4, .5, .6]
+})
 app.get("/", (req, res) => {
     counter.labels(200).inc()
     counter.labels(300).inc()
     gauge.set(100*Math.random())
+    const time = Math.random()
+    histogram.observe(time)
     res.send("Hello Prometheus")
 })
 
