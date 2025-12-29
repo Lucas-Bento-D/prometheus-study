@@ -13,7 +13,7 @@ scrape_configs:
     scheme: http
 
     static_configs:
-      - targets: ['192.168.2.116:9100']
+      - targets: ['192.168.1.19:9100']
 
   - job_name: study_metrics'
     scrape_interval: 5s
@@ -21,4 +21,4 @@ scrape_configs:
     scheme: http
 
     static_configs:
-      - targets: ['192.168.2.116:3000']
+      - targets: ['172.18.0.1:3030']

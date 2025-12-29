@@ -17,7 +17,7 @@ const gauge = new promClient.Gauge({
 
 const histogram = new promClient.Histogram({
     name: "requests_time_seconds",
-    help: "exemplo de tempo de resposta de api",
+    help: "exemplo de tempo de resposta de api - histogram",
     buckets: [.1, .2, .3, .4, .5, .6]
 })
 
@@ -29,10 +29,10 @@ const summary = new promClient.Summary({
 app.get("/", (req, res) => {
     counter.labels(200).inc()
     counter.labels(300).inc()
-    gauge.set(process.memoryUsage().heapUsed)
-    const time = Math.random()
-    histogram.observe(time)
-    summary.observe(time)
+    const random = Math.random()
+    gauge.set(random)
+    histogram.observe(random)
+    summary.observe(random)
     res.send("Hello Prometheus")
 })
 
@@ -41,4 +41,4 @@ app.get("/metrics", async (req, res) =>{
     res.end(await register.metrics())
 })
 
-app.listen(3000)
+app.listen(3030)
